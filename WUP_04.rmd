@@ -65,6 +65,13 @@ model1 <- aov(WORDSUM~DEGREE,data=mydata)
 summary.aov(model1)
 ```
 The P value seems very small. The P value represents the chances of getting this result or something farther when the null hypothesis is actually true. So we need to reject the null hypothesis.
+```{r}
+#we specify the margins starting at the bottom and proceeding clockwise - thus 8.7 is the left side margin to hold the names of the factors
+par(mar = c(3, 15, 2, 2))
+plot(TukeyHSD(model1,conf.level=.95),las=2)
+```
+
+This shows the highschool and graduate are different from each other and LT hightschool and graduate are different from each other. We can see that LT high school -graduate and high shool -graduate do not hit 0 
 
 # Discussion and Conclusion
 
