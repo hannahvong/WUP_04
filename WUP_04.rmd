@@ -42,6 +42,8 @@ mydata<-read.csv(file="GSScsv.csv")
 ```{r}
 boxplot(WORDSUM~DEGREE,data=mydata)
 ```
+
+
 The middle box and thefar right boxcan go complete under the box to the left  labeled "graduate"That mean the values of the WORDSUM tesr are a lower value than the boxes "Bachelor" " Graduate" and "Junior College"
 
 ### Numerical Descriptive Results
@@ -64,7 +66,7 @@ The individuals with a junior college degree, a bachelors degree, and a graduate
 model1 <- aov(WORDSUM~DEGREE,data=mydata)
 summary.aov(model1)
 ```
-The P value seems very small. The P value represents the chances of getting this result or something farther when the null hypothesis is actually true. So we need to reject the null hypothesis.
+The P value seems very small.Value was avery small value of 0.000236. The P value represents the chances of getting this result or something farther when the null hypothesis is actually true. So we need to reject the null hypothesis.
 ```{r}
 #we specify the margins starting at the bottom and proceeding clockwise - thus 8.7 is the left side margin to hold the names of the factors
 par(mar = c(3, 15, 2, 2))
@@ -76,3 +78,6 @@ This shows the highschool and graduate are different from each other and LT high
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+In this boxplot we discussed how individuals with a graduate rate from high shool compare  with people in junior college .we see that The individuals with a junior college degree, a bachelors degree, and a graduate school degree have a higher mean the result than the high school and junior high shool categories. As you can see in the plot, the individual with degrees have a mean value of 9 or higher,while the LT High School students and the high studenrs have a mean value of 8 or less.
+The P value seems very small. Value was avery small value of 0.000236.The P value represents the chances of getting this result or something farther when the null hypothesis is actually true. So we need to reject the null hypothesis.
+Lastly we use the "TukeyHSD" model and were able to ellaborate further that the 95% confidence level LT highschool - graduate and highschool - graduate categories did not go over the "0". In conclusion  these two cateogories refrenced are different.
